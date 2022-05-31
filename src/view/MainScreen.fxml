@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768" prefWidth="1024" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreen">
+    <children>
+        <GridPane layoutY="56.0" prefHeight="712.0" prefWidth="1024.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="510.0" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="638.0" minWidth="10.0" prefWidth="550.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="8.0" prefWidth="8.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="584.0" minWidth="10.0" prefWidth="550.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="0.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="676.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="676.0" minHeight="10.0" prefHeight="540.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="287.0" minHeight="3.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <StackPane prefHeight="150.0" prefWidth="479.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <TableView fx:id="parts_table" prefHeight="200.0" prefWidth="200.0">
+                            <columns>
+                                <TableColumn fx:id="part_id" prefWidth="100.0" text="Part ID" />
+                                <TableColumn fx:id="part_name" prefWidth="138.0" text="Part Name" />
+                        <TableColumn fx:id="part_inventory" prefWidth="120.0" text="Inventory Level" />
+                        <TableColumn fx:id="part_unit_cost" minWidth="0.0" prefWidth="120.0" text="Price/Cost Per Unit" />
+                            </columns>
+                        </TableView>
+                    </children></StackPane>
+                <StackPane prefHeight="81.0" prefWidth="341.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="Parts" underline="true">
+                            <font>
+                                <Font name="Bell MT Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children></StackPane>
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" />
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <children>
+                        <TableView fx:id="products_table" prefHeight="200.0" prefWidth="200.0">
+                            <columns>
+                                <TableColumn fx:id="product_id" prefWidth="100.0" text="Product ID" />
+                                <TableColumn fx:id="product_name" prefWidth="138.0" text="Product Name" />
+                        <TableColumn fx:id="product_inventory" prefWidth="120.0" text="Inventory Level" />
+                        <TableColumn fx:id="product_unit_cost" prefWidth="120.0" text="Price/Cost Per Unit" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </StackPane>
+                <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3">
+                    <children>
+                        <Label text="Products" underline="true">
+                            <font>
+                                <Font name="Bell MT Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children></StackPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="mainscreen_part_add" mnemonicParsing="false" onAction="#toAddPart" text="Add" />
+                  <Button fx:id="mainscreen_part_modify" mnemonicParsing="false" onAction="#toModifyPart" text="Modify">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="mainscreen_part_delete" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deletePart" text="Delete">
+                     <HBox.margin>
+                        <Insets left="10.0" right="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="mainscreen_add_product" mnemonicParsing="false" onAction="#toAddProduct" text="Add" />
+                  <Button fx:id="mainscreen_modify_product" mnemonicParsing="false" onAction="#toModifyProduct" text="Modify">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="mainscreen_delete_product" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#deleteProduct" text="Delete">
+                     <HBox.margin>
+                        <Insets left="10.0" right="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="mainscreen_exit" layoutX="444.0" layoutY="15.0" mnemonicParsing="false" onAction="#mainscreenOnExit" text="Exit" />
+               </children>
+            </Pane>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label alignment="CENTER" text=" Search Parts ">
+                     <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="mainscreen_search_parts_field" prefHeight="25.0" prefWidth="225.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></TextField>
+                  <Button fx:id="mainscreen_search_parts_button" mnemonicParsing="false" onAction="#searchParts" text="Search">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="mainscreen_parts_reset_button" mnemonicParsing="false" onAction="#resetSearchParts" text="Reset">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="5.0" right="15.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Search Products ">
+                     <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="2.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="mainscreen_search_products_field" prefHeight="25.0" prefWidth="200.0" />
+                  <Button fx:id="mainscreen_search_products_button" mnemonicParsing="false" onAction="#searchProducts" text="Search">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="mainscreen_product_reset_button" mnemonicParsing="false" onAction="#resetSearchProducts" text="Reset">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="5.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets right="15.0" />
+               </padding>
+            </HBox>
+            </children>
+        </GridPane>
+        <Label alignment="TOP_CENTER" layoutX="123.0" prefHeight="73.0" prefWidth="772.0" text="Inventory Management System" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font name="Bell MT Bold" size="36.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
